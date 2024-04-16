@@ -4,7 +4,7 @@ enum Endpoint {
     
     // MARK: - Cases
     case cities(name: String)
-    case weather
+    case weather(lat: Double, long: Double)
     
     
     // MARK: - Properties
