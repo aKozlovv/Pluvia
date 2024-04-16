@@ -9,23 +9,51 @@
 /* Begin PBXBuildFile section */
 		FB96A5112BCF21EB00439CD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A5102BCF21EB00439CD4 /* AppDelegate.swift */; };
 		FB96A5132BCF21EB00439CD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A5122BCF21EB00439CD4 /* SceneDelegate.swift */; };
-		FB96A5152BCF21EB00439CD4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A5142BCF21EB00439CD4 /* ViewController.swift */; };
-		FB96A5182BCF21EB00439CD4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB96A5162BCF21EB00439CD4 /* Main.storyboard */; };
+		FB96A5152BCF21EB00439CD4 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A5142BCF21EB00439CD4 /* LocationsView.swift */; };
 		FB96A51B2BCF21EB00439CD4 /* Pluvia.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FB96A5192BCF21EB00439CD4 /* Pluvia.xcdatamodeld */; };
 		FB96A51D2BCF21EC00439CD4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB96A51C2BCF21EC00439CD4 /* Assets.xcassets */; };
 		FB96A5202BCF21EC00439CD4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB96A51E2BCF21EC00439CD4 /* LaunchScreen.storyboard */; };
+		FB96A52C2BCF22BB00439CD4 /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A52B2BCF22BB00439CD4 /* Constraints.swift */; };
+		FB96A52E2BCF22C000439CD4 /* Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A52D2BCF22C000439CD4 /* Table.swift */; };
+		FB96A5302BCF22C800439CD4 /* Collection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A52F2BCF22C800439CD4 /* Collection.swift */; };
+		FB96A5322BCF22FE00439CD4 /* Publishers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A5312BCF22FE00439CD4 /* Publishers.swift */; };
+		FB96A5342BCF231200439CD4 /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A5332BCF231200439CD4 /* Layout.swift */; };
+		FB96A5382BCF235300439CD4 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A5372BCF235300439CD4 /* APIError.swift */; };
+		FB96A53A2BCF235B00439CD4 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A5392BCF235B00439CD4 /* Endpoint.swift */; };
+		FB96A53C2BCF236400439CD4 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A53B2BCF236400439CD4 /* HTTPMethod.swift */; };
+		FB96A53E2BCF239700439CD4 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A53D2BCF239700439CD4 /* APIService.swift */; };
+		FB96A5402BCF23A800439CD4 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A53F2BCF23A800439CD4 /* APIClient.swift */; };
+		FB96A5432BCF23C700439CD4 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A5422BCF23C700439CD4 /* Weather.swift */; };
+		FB96A5452BCF23DD00439CD4 /* Coordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A5442BCF23DD00439CD4 /* Coordinates.swift */; };
+		FB96A5472BCF242300439CD4 /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A5462BCF242300439CD4 /* LocationsViewModel.swift */; };
+		FB96A54A2BCF247100439CD4 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A5492BCF247100439CD4 /* WeatherView.swift */; };
+		FB96A54C2BCF248600439CD4 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A54B2BCF248600439CD4 /* WeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FB96A50D2BCF21EB00439CD4 /* Pluvia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pluvia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB96A5102BCF21EB00439CD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB96A5122BCF21EB00439CD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FB96A5142BCF21EB00439CD4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FB96A5172BCF21EB00439CD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		FB96A5142BCF21EB00439CD4 /* LocationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
 		FB96A51A2BCF21EB00439CD4 /* Pluvia.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pluvia.xcdatamodel; sourceTree = "<group>"; };
 		FB96A51C2BCF21EC00439CD4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB96A51F2BCF21EC00439CD4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB96A5212BCF21EC00439CD4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB96A52B2BCF22BB00439CD4 /* Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		FB96A52D2BCF22C000439CD4 /* Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Table.swift; sourceTree = "<group>"; };
+		FB96A52F2BCF22C800439CD4 /* Collection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Collection.swift; sourceTree = "<group>"; };
+		FB96A5312BCF22FE00439CD4 /* Publishers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Publishers.swift; sourceTree = "<group>"; };
+		FB96A5332BCF231200439CD4 /* Layout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Layout.swift; sourceTree = "<group>"; };
+		FB96A5372BCF235300439CD4 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		FB96A5392BCF235B00439CD4 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		FB96A53B2BCF236400439CD4 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
+		FB96A53D2BCF239700439CD4 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		FB96A53F2BCF23A800439CD4 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		FB96A5422BCF23C700439CD4 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		FB96A5442BCF23DD00439CD4 /* Coordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinates.swift; sourceTree = "<group>"; };
+		FB96A5462BCF242300439CD4 /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
+		FB96A5492BCF247100439CD4 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
+		FB96A54B2BCF248600439CD4 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +86,102 @@
 		FB96A50F2BCF21EB00439CD4 /* Pluvia */ = {
 			isa = PBXGroup;
 			children = (
-				FB96A5102BCF21EB00439CD4 /* AppDelegate.swift */,
-				FB96A5122BCF21EB00439CD4 /* SceneDelegate.swift */,
-				FB96A5142BCF21EB00439CD4 /* ViewController.swift */,
-				FB96A5162BCF21EB00439CD4 /* Main.storyboard */,
-				FB96A51C2BCF21EC00439CD4 /* Assets.xcassets */,
-				FB96A51E2BCF21EC00439CD4 /* LaunchScreen.storyboard */,
-				FB96A5212BCF21EC00439CD4 /* Info.plist */,
+				FB96A5292BCF229D00439CD4 /* Core */,
+				FB96A5412BCF23BD00439CD4 /* Models */,
+				FB96A52A2BCF22AF00439CD4 /* Extensions */,
+				FB96A5352BCF233400439CD4 /* Network */,
 				FB96A5192BCF21EB00439CD4 /* Pluvia.xcdatamodeld */,
+				FB96A5212BCF21EC00439CD4 /* Info.plist */,
+				FB96A5482BCF245000439CD4 /* Locations */,
+				FB96A54D2BCF249600439CD4 /* Weather */,
 			);
 			path = Pluvia;
+			sourceTree = "<group>";
+		};
+		FB96A5272BCF228E00439CD4 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				FB96A5102BCF21EB00439CD4 /* AppDelegate.swift */,
+				FB96A5122BCF21EB00439CD4 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		FB96A5282BCF229400439CD4 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FB96A51C2BCF21EC00439CD4 /* Assets.xcassets */,
+				FB96A51E2BCF21EC00439CD4 /* LaunchScreen.storyboard */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		FB96A5292BCF229D00439CD4 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FB96A5282BCF229400439CD4 /* Assets */,
+				FB96A5272BCF228E00439CD4 /* Delegates */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		FB96A52A2BCF22AF00439CD4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FB96A52B2BCF22BB00439CD4 /* Constraints.swift */,
+				FB96A52D2BCF22C000439CD4 /* Table.swift */,
+				FB96A52F2BCF22C800439CD4 /* Collection.swift */,
+				FB96A5312BCF22FE00439CD4 /* Publishers.swift */,
+				FB96A5332BCF231200439CD4 /* Layout.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FB96A5352BCF233400439CD4 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				FB96A5362BCF234800439CD4 /* Types */,
+				FB96A53D2BCF239700439CD4 /* APIService.swift */,
+				FB96A53F2BCF23A800439CD4 /* APIClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		FB96A5362BCF234800439CD4 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				FB96A5372BCF235300439CD4 /* APIError.swift */,
+				FB96A5392BCF235B00439CD4 /* Endpoint.swift */,
+				FB96A53B2BCF236400439CD4 /* HTTPMethod.swift */,
+			);
+			path = Types;
+			sourceTree = "<group>";
+		};
+		FB96A5412BCF23BD00439CD4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FB96A5422BCF23C700439CD4 /* Weather.swift */,
+				FB96A5442BCF23DD00439CD4 /* Coordinates.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FB96A5482BCF245000439CD4 /* Locations */ = {
+			isa = PBXGroup;
+			children = (
+				FB96A5142BCF21EB00439CD4 /* LocationsView.swift */,
+				FB96A5462BCF242300439CD4 /* LocationsViewModel.swift */,
+			);
+			path = Locations;
+			sourceTree = "<group>";
+		};
+		FB96A54D2BCF249600439CD4 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				FB96A5492BCF247100439CD4 /* WeatherView.swift */,
+				FB96A54B2BCF248600439CD4 /* WeatherViewModel.swift */,
+			);
+			path = Weather;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,7 +244,6 @@
 			files = (
 				FB96A5202BCF21EC00439CD4 /* LaunchScreen.storyboard in Resources */,
 				FB96A51D2BCF21EC00439CD4 /* Assets.xcassets in Resources */,
-				FB96A5182BCF21EB00439CD4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,9 +254,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB96A52E2BCF22C000439CD4 /* Table.swift in Sources */,
+				FB96A5402BCF23A800439CD4 /* APIClient.swift in Sources */,
 				FB96A51B2BCF21EB00439CD4 /* Pluvia.xcdatamodeld in Sources */,
-				FB96A5152BCF21EB00439CD4 /* ViewController.swift in Sources */,
+				FB96A5152BCF21EB00439CD4 /* LocationsView.swift in Sources */,
+				FB96A5432BCF23C700439CD4 /* Weather.swift in Sources */,
+				FB96A5382BCF235300439CD4 /* APIError.swift in Sources */,
+				FB96A52C2BCF22BB00439CD4 /* Constraints.swift in Sources */,
+				FB96A5472BCF242300439CD4 /* LocationsViewModel.swift in Sources */,
+				FB96A5452BCF23DD00439CD4 /* Coordinates.swift in Sources */,
+				FB96A5322BCF22FE00439CD4 /* Publishers.swift in Sources */,
+				FB96A5342BCF231200439CD4 /* Layout.swift in Sources */,
 				FB96A5112BCF21EB00439CD4 /* AppDelegate.swift in Sources */,
+				FB96A53C2BCF236400439CD4 /* HTTPMethod.swift in Sources */,
+				FB96A53E2BCF239700439CD4 /* APIService.swift in Sources */,
+				FB96A5302BCF22C800439CD4 /* Collection.swift in Sources */,
+				FB96A54C2BCF248600439CD4 /* WeatherViewModel.swift in Sources */,
+				FB96A54A2BCF247100439CD4 /* WeatherView.swift in Sources */,
+				FB96A53A2BCF235B00439CD4 /* Endpoint.swift in Sources */,
 				FB96A5132BCF21EB00439CD4 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,14 +279,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FB96A5162BCF21EB00439CD4 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FB96A5172BCF21EB00439CD4 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FB96A51E2BCF21EC00439CD4 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -301,9 +421,8 @@
 				INFOPLIST_FILE = Pluvia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,9 +430,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = personal.Pluvia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -329,9 +451,8 @@
 				INFOPLIST_FILE = Pluvia/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -339,9 +460,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = personal.Pluvia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
