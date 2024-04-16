@@ -28,6 +28,7 @@
 		FB96A5472BCF242300439CD4 /* LocationsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A5462BCF242300439CD4 /* LocationsViewModel.swift */; };
 		FB96A54A2BCF247100439CD4 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A5492BCF247100439CD4 /* WeatherView.swift */; };
 		FB96A54C2BCF248600439CD4 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A54B2BCF248600439CD4 /* WeatherViewModel.swift */; };
+		FB96A5502BCF255600439CD4 /* Formatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A54F2BCF255600439CD4 /* Formatted.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		FB96A5462BCF242300439CD4 /* LocationsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsViewModel.swift; sourceTree = "<group>"; };
 		FB96A5492BCF247100439CD4 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		FB96A54B2BCF248600439CD4 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
+		FB96A54F2BCF255600439CD4 /* Formatted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatted.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +90,7 @@
 			children = (
 				FB96A5292BCF229D00439CD4 /* Core */,
 				FB96A5412BCF23BD00439CD4 /* Models */,
-				FB96A52A2BCF22AF00439CD4 /* Extensions */,
+				FB96A54E2BCF254C00439CD4 /* Helpers */,
 				FB96A5352BCF233400439CD4 /* Network */,
 				FB96A5192BCF21EB00439CD4 /* Pluvia.xcdatamodeld */,
 				FB96A5212BCF21EC00439CD4 /* Info.plist */,
@@ -184,6 +186,15 @@
 			path = Weather;
 			sourceTree = "<group>";
 		};
+		FB96A54E2BCF254C00439CD4 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FB96A52A2BCF22AF00439CD4 /* Extensions */,
+				FB96A54F2BCF255600439CD4 /* Formatted.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -254,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB96A5502BCF255600439CD4 /* Formatted.swift in Sources */,
 				FB96A52E2BCF22C000439CD4 /* Table.swift in Sources */,
 				FB96A5402BCF23A800439CD4 /* APIClient.swift in Sources */,
 				FB96A51B2BCF21EB00439CD4 /* Pluvia.xcdatamodeld in Sources */,
