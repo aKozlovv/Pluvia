@@ -3,7 +3,7 @@ import Combine
 final class WeatherViewModel {
     
     // MARK: - Properties
-    @Published var city: String
+    @Published var city: City
     @Published var temperature: Double = 0.0
     @Published var hourlyWeather = [Double]()
     @Published var hours = [String]()
@@ -14,7 +14,7 @@ final class WeatherViewModel {
     
     
     // MARK: - Init
-    init(city: String) {
+    init(city: City) {
         self.city = city
         fetchWeather()
     }
@@ -25,6 +25,7 @@ final class WeatherViewModel {
         Task {
             do {
                 let result = try await apiService.fetchWeather(for: city)
+                
                 switch result {
                 case .success(let success):
                     guard

@@ -4,7 +4,7 @@ protocol APIService {
     
     func fetchCities(by name: String) async throws -> Result<Coordinates?, APIError>
     
-    func fetchWeather(for city: String) async throws -> Result<Weather?, APIError>
+    func fetchWeather(for city: City) async throws -> Result<Weather?, APIError>
 }
 
 

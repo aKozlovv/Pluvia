@@ -1,3 +1,6 @@
+import Combine
+import Foundation
+
 final class APIClient: APIService {
     
     
@@ -10,24 +13,8 @@ final class APIClient: APIService {
         return try await request(.cities(name: name))
     }
     
-    func fetchWeather(for city: String) async throws -> Result<Weather?, APIError> {
-        guard let cords = try? await getCoordinates(for: city) else {
-            throw APIError.invalidURL
-        }
-        
-        switch cords {
-        case .success(let success):
-            
-            guard
-                let lat = success?.results[0].latitude,
-                let long = success?.results[0].longitude
-            else { throw APIError.failedResponse }
-            
-            return try await request(.weather(lat: lat, long: long))
-            
-        case .failure(_):
-            throw APIError.invalidURL
-        }
+    func fetchWeather(for city: City) async throws -> Result<Weather?, APIError> {
+        return try await request(.weather(lat: city.latitude, long: city.longitude))
     }
     
     

@@ -1,35 +1,52 @@
 import Combine
+import Foundation
 
-final class LocationsViewModel {
+final class LocationsViewModel: ObservableObject {
     
     // MARK: - Properties
     @Published var cities = [City]()
+    @Published var errorMessage: String?
     
-    private var apiService = APIClient()
+    private lazy var apiService = APIClient()
     private lazy var subscriptions = Set<AnyCancellable>()
     
     
     // MARK: - Init
-    init() {
-        fetchCities()
+    init() {}
+    
+    
+    // MARK: - Methods
+    func city(at indexPath: IndexPath) -> City {
+        return cities[indexPath.row]
     }
     
     
-    // MARK: - Private func
-    private func fetchCities() {
+    // MARK: - Network
+    func bind(field search: AnyPublisher<String, Never>) {
+        search
+            .debounce(for: .seconds(0.5), scheduler: DispatchQueue.global())
+            .sink { query in
+                self.fetchCities(by: query)
+            }
+            .store(in: &subscriptions)
+    }
+    
+    func fetchCities(by name: String) {
         Task {
-            do {
-                let result = try await apiService.fetchCities(by: "Berlin")
-                switch result {
-                case .success(let success):
-                    guard let data = success?.results else { return }
-                    self.cities = data
-                    
-                case .failure(let failure):
-                    print(failure.message)
-                }
+            let result = try await apiService.fetchCities(by: name)
+            
+            switch result {
+            case .success(let success):
+                guard let data = success?.results else {
+                    return }
+                
+                print(data)
+                
+                self.cities = data
+                
+            case .failure(let failure):
+                self.errorMessage = failure.message
             }
         }
-        
     }
 }
