@@ -40,8 +40,8 @@ final class LocationsView: UITableViewController {
         
         viewModel.$cities
             .receive(on: DispatchQueue.main)
-            .sink { city in
-                self.tableView.reloadData()
+            .sink {[weak self] city in
+                self?.tableView.reloadData()
             }
             .store(in: &subscriptions)
         
