@@ -32,19 +32,18 @@ final class LocationsView: UITableViewController {
     // MARK: - Private methods
     private func setupBindings() {
         
-        guard let textField = navigationItem.searchController?.searchBar.searchTextField.textPublisher() else {
-            return }
+        guard let textField = navigationItem.searchController?.searchBar.searchTextField.textPublisher()
+        else { return }
         
         viewModel
             .bind(field: textField)
         
         viewModel.$cities
             .receive(on: DispatchQueue.main)
-            .sink {[weak self] city in
+            .sink {[weak self] _ in
                 self?.tableView.reloadData()
             }
             .store(in: &subscriptions)
-        
     }
     
     private func setupSearchBar() {
@@ -54,22 +53,39 @@ final class LocationsView: UITableViewController {
     
     private func setupTable() {
         tableView.rowHeight = 120
-        tableView.register(cell: UITableViewCell.self)
+        tableView.register(cell: LocationsCell.self)
         tableView.dataSource = self
         tableView.delegate = self
     }
     
     
+    // MARK: - Navigation
+    private func presentWeather(with vc: UIViewController) {
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
+    }
+    
+    
     // MARK: - Overrides
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let city = viewModel.city(at: indexPath)
+        let weatherVM = WeatherViewModel(city: city)
+        let weatherVC = WeatherView(viewModel: weatherVM)
+        
+        presentWeather(with: weatherVC)
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.cities.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeue(for: indexPath)
+        let cell: LocationsCell = tableView.dequeue(for: indexPath)
         
         let city = viewModel.city(at: indexPath)
-        cell.textLabel?.text = city.name
+        let cellVM = LocationCellViewModel(city: city)
+        cell.bind(with: cellVM)
         
         return cell
     }

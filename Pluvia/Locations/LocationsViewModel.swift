@@ -25,8 +25,8 @@ final class LocationsViewModel: ObservableObject {
     func bind(field search: AnyPublisher<String, Never>) {
         search
             .debounce(for: .seconds(0.5), scheduler: DispatchQueue.global())
-            .sink { query in
-                self.fetchCities(by: query)
+            .sink {[weak self] query in
+                self?.fetchCities(by: query)
             }
             .store(in: &subscriptions)
     }
@@ -39,8 +39,6 @@ final class LocationsViewModel: ObservableObject {
             case .success(let success):
                 guard let data = success?.results else {
                     return }
-                
-                print(data)
                 
                 self.cities = data
                 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FB29BC752BD534A300C391DB /* LocationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB29BC742BD534A300C391DB /* LocationsCell.swift */; };
+		FB29BC782BD53B9700C391DB /* LocationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB29BC772BD53B9700C391DB /* LocationCellViewModel.swift */; };
 		FB96A5112BCF21EB00439CD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A5102BCF21EB00439CD4 /* AppDelegate.swift */; };
 		FB96A5132BCF21EB00439CD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A5122BCF21EB00439CD4 /* SceneDelegate.swift */; };
 		FB96A5152BCF21EB00439CD4 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A5142BCF21EB00439CD4 /* LocationsView.swift */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FB29BC742BD534A300C391DB /* LocationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsCell.swift; sourceTree = "<group>"; };
+		FB29BC772BD53B9700C391DB /* LocationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellViewModel.swift; sourceTree = "<group>"; };
 		FB96A50D2BCF21EB00439CD4 /* Pluvia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pluvia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB96A5102BCF21EB00439CD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB96A5122BCF21EB00439CD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +77,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FB29BC762BD53B8A00C391DB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FB29BC742BD534A300C391DB /* LocationsCell.swift */,
+				FB29BC772BD53B9700C391DB /* LocationCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		FB96A5042BCF21EB00439CD4 = {
 			isa = PBXGroup;
 			children = (
@@ -178,6 +191,7 @@
 			children = (
 				FB96A5142BCF21EB00439CD4 /* LocationsView.swift */,
 				FB96A5462BCF242300439CD4 /* LocationsViewModel.swift */,
+				FB29BC762BD53B8A00C391DB /* Cell */,
 			);
 			path = Locations;
 			sourceTree = "<group>";
@@ -289,6 +303,8 @@
 				FB96A52C2BCF22BB00439CD4 /* Constraints.swift in Sources */,
 				FB96A5472BCF242300439CD4 /* LocationsViewModel.swift in Sources */,
 				FB96A5452BCF23DD00439CD4 /* Coordinates.swift in Sources */,
+				FB29BC752BD534A300C391DB /* LocationsCell.swift in Sources */,
+				FB29BC782BD53B9700C391DB /* LocationCellViewModel.swift in Sources */,
 				FB96A5322BCF22FE00439CD4 /* Publishers.swift in Sources */,
 				FBC0932A2BD0319C00C8E4FA /* FavoritesView.swift in Sources */,
 				FBC0932C2BD031A600C8E4FA /* FavoritesViewModel.swift in Sources */,

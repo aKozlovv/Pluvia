@@ -9,6 +9,7 @@ final class WeatherView: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .red
     }
     
     
