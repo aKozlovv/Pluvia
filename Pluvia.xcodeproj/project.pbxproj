@@ -34,6 +34,7 @@
 		FB96A54A2BCF247100439CD4 /* WeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A5492BCF247100439CD4 /* WeatherView.swift */; };
 		FB96A54C2BCF248600439CD4 /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A54B2BCF248600439CD4 /* WeatherViewModel.swift */; };
 		FB96A5502BCF255600439CD4 /* Formatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A54F2BCF255600439CD4 /* Formatted.swift */; };
+		FBAFB9C92BD6559A00B49D02 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAFB9C82BD6559A00B49D02 /* Colors.swift */; };
 		FBC0932A2BD0319C00C8E4FA /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC093292BD0319C00C8E4FA /* FavoritesView.swift */; };
 		FBC0932C2BD031A600C8E4FA /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC0932B2BD031A600C8E4FA /* FavoritesViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -68,6 +69,7 @@
 		FB96A5492BCF247100439CD4 /* WeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherView.swift; sourceTree = "<group>"; };
 		FB96A54B2BCF248600439CD4 /* WeatherViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewModel.swift; sourceTree = "<group>"; };
 		FB96A54F2BCF255600439CD4 /* Formatted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatted.swift; sourceTree = "<group>"; };
+		FBAFB9C82BD6559A00B49D02 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		FBC093292BD0319C00C8E4FA /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		FBC0932B2BD031A600C8E4FA /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -227,6 +229,7 @@
 			children = (
 				FB96A52A2BCF22AF00439CD4 /* Extensions */,
 				FB96A54F2BCF255600439CD4 /* Formatted.swift */,
+				FBAFB9C82BD6559A00B49D02 /* Colors.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				FBC0932A2BD0319C00C8E4FA /* FavoritesView.swift in Sources */,
 				FBC0932C2BD031A600C8E4FA /* FavoritesViewModel.swift in Sources */,
 				FB96A5342BCF231200439CD4 /* Layout.swift in Sources */,
+				FBAFB9C92BD6559A00B49D02 /* Colors.swift in Sources */,
 				FB96A5112BCF21EB00439CD4 /* AppDelegate.swift in Sources */,
 				FB96A53C2BCF236400439CD4 /* HTTPMethod.swift in Sources */,
 				FB96A53E2BCF239700439CD4 /* APIService.swift in Sources */,

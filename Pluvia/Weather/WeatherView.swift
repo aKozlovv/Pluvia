@@ -84,6 +84,7 @@ final class WeatherView: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        applyGradient()
         setupUI()
         layoutUI()
         bind()
@@ -125,7 +126,6 @@ final class WeatherView: UIViewController {
                 self?.collection.reloadData()
             }
             .store(in: &subscriptions)
-        
     }
     
     @objc
@@ -135,6 +135,12 @@ final class WeatherView: UIViewController {
     
     
     // MARK: - UI methods
+    private func applyGradient() {
+        let gradient = WeatherState.sunny.gradient
+        gradient.frame = view.bounds
+        view.layer.addSublayer(gradient)
+    }
+    
     private func setupUI() {
         view.addSubviewsUsingAutoLayout(
             backButton,
@@ -146,7 +152,6 @@ final class WeatherView: UIViewController {
             temperatureTitle,
             feelsLikeTitle,
             errorMessage)
-        
     }
     
     private func layoutUI() {

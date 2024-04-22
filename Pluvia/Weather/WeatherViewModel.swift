@@ -7,9 +7,10 @@ final class WeatherViewModel {
     private var city: City
     
     @Published var location: String?
-    @Published var temperature: String? = "0.0"
+    @Published var temperature: String? = "0.0" + "С"
     @Published var hourlyWeather = [Double]()
     @Published var hours = [String]()
+    
     @Published var errorMessage: String?
     
     private lazy var subscriptions = Set<AnyCancellable>()
