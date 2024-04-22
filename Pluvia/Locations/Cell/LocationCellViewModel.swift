@@ -3,7 +3,7 @@ import Combine
 final class LocationCellViewModel {
  
     // MARK: - Properties
-    var city: City
+    private var city: City
     @Published var cityName: String!
     @Published var countryName: String!
     

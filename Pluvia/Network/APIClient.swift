@@ -16,10 +16,4 @@ final class APIClient: APIService {
     func fetchWeather(for city: City) async throws -> Result<Weather?, APIError> {
         return try await request(.weather(lat: city.latitude, long: city.longitude))
     }
-    
-    
-    // MARK: - Private methods
-    private func getCoordinates(for city: String) async throws -> Result<Coordinates?, APIError> {
-        return try await request(.cities(name: city))
-    }
 }

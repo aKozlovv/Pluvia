@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		FB29BC752BD534A300C391DB /* LocationsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB29BC742BD534A300C391DB /* LocationsCell.swift */; };
 		FB29BC782BD53B9700C391DB /* LocationCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB29BC772BD53B9700C391DB /* LocationCellViewModel.swift */; };
+		FB29BC7B2BD568DF00C391DB /* WeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB29BC7A2BD568DF00C391DB /* WeatherCell.swift */; };
+		FB29BC7D2BD5694000C391DB /* WeatherCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB29BC7C2BD5694000C391DB /* WeatherCellViewModel.swift */; };
+		FB29BC7F2BD56B7200C391DB /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB29BC7E2BD56B7200C391DB /* String.swift */; };
 		FB96A5112BCF21EB00439CD4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A5102BCF21EB00439CD4 /* AppDelegate.swift */; };
 		FB96A5132BCF21EB00439CD4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A5122BCF21EB00439CD4 /* SceneDelegate.swift */; };
 		FB96A5152BCF21EB00439CD4 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A5142BCF21EB00439CD4 /* LocationsView.swift */; };
@@ -38,6 +41,9 @@
 /* Begin PBXFileReference section */
 		FB29BC742BD534A300C391DB /* LocationsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationsCell.swift; sourceTree = "<group>"; };
 		FB29BC772BD53B9700C391DB /* LocationCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationCellViewModel.swift; sourceTree = "<group>"; };
+		FB29BC7A2BD568DF00C391DB /* WeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCell.swift; sourceTree = "<group>"; };
+		FB29BC7C2BD5694000C391DB /* WeatherCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherCellViewModel.swift; sourceTree = "<group>"; };
+		FB29BC7E2BD56B7200C391DB /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		FB96A50D2BCF21EB00439CD4 /* Pluvia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pluvia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB96A5102BCF21EB00439CD4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB96A5122BCF21EB00439CD4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +88,15 @@
 			children = (
 				FB29BC742BD534A300C391DB /* LocationsCell.swift */,
 				FB29BC772BD53B9700C391DB /* LocationCellViewModel.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		FB29BC792BD568CF00C391DB /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				FB29BC7A2BD568DF00C391DB /* WeatherCell.swift */,
+				FB29BC7C2BD5694000C391DB /* WeatherCellViewModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -152,6 +167,7 @@
 				FB96A52D2BCF22C000439CD4 /* Table.swift */,
 				FB96A52F2BCF22C800439CD4 /* Collection.swift */,
 				FB96A5312BCF22FE00439CD4 /* Publishers.swift */,
+				FB29BC7E2BD56B7200C391DB /* String.swift */,
 				FB96A5332BCF231200439CD4 /* Layout.swift */,
 			);
 			path = Extensions;
@@ -199,6 +215,7 @@
 		FB96A54D2BCF249600439CD4 /* Weather */ = {
 			isa = PBXGroup;
 			children = (
+				FB29BC792BD568CF00C391DB /* Cell */,
 				FB96A5492BCF247100439CD4 /* WeatherView.swift */,
 				FB96A54B2BCF248600439CD4 /* WeatherViewModel.swift */,
 			);
@@ -296,6 +313,7 @@
 				FB96A5502BCF255600439CD4 /* Formatted.swift in Sources */,
 				FB96A52E2BCF22C000439CD4 /* Table.swift in Sources */,
 				FB96A5402BCF23A800439CD4 /* APIClient.swift in Sources */,
+				FB29BC7F2BD56B7200C391DB /* String.swift in Sources */,
 				FB96A51B2BCF21EB00439CD4 /* Pluvia.xcdatamodeld in Sources */,
 				FB96A5152BCF21EB00439CD4 /* LocationsView.swift in Sources */,
 				FB96A5432BCF23C700439CD4 /* Weather.swift in Sources */,
@@ -312,9 +330,11 @@
 				FB96A5112BCF21EB00439CD4 /* AppDelegate.swift in Sources */,
 				FB96A53C2BCF236400439CD4 /* HTTPMethod.swift in Sources */,
 				FB96A53E2BCF239700439CD4 /* APIService.swift in Sources */,
+				FB29BC7D2BD5694000C391DB /* WeatherCellViewModel.swift in Sources */,
 				FB96A5302BCF22C800439CD4 /* Collection.swift in Sources */,
 				FB96A54C2BCF248600439CD4 /* WeatherViewModel.swift in Sources */,
 				FB96A54A2BCF247100439CD4 /* WeatherView.swift in Sources */,
+				FB29BC7B2BD568DF00C391DB /* WeatherCell.swift in Sources */,
 				FB96A53A2BCF235B00439CD4 /* Endpoint.swift in Sources */,
 				FB96A5132BCF21EB00439CD4 /* SceneDelegate.swift in Sources */,
 			);

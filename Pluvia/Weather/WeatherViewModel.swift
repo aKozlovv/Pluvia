@@ -1,10 +1,13 @@
 import Combine
+import Foundation
 
 final class WeatherViewModel {
     
     // MARK: - Properties
-    @Published var city: City
-    @Published var temperature: Double = 0.0
+    private var city: City
+    
+    @Published var location: String?
+    @Published var temperature: String? = "0.0"
     @Published var hourlyWeather = [Double]()
     @Published var hours = [String]()
     @Published var errorMessage: String?
@@ -16,7 +19,18 @@ final class WeatherViewModel {
     // MARK: - Init
     init(city: City) {
         self.city = city
+        self.location = city.name
         fetchWeather()
+    }
+    
+    
+    // MARK: - Public methods
+    func getTime(for indexPath: IndexPath) -> String {
+        return hours[indexPath.row]
+    }
+    
+    func getHourlyWeather(for indexPath: IndexPath) -> Double {
+        return hourlyWeather[indexPath.row]
     }
     
     
@@ -28,6 +42,7 @@ final class WeatherViewModel {
                 
                 switch result {
                 case .success(let success):
+                    
                     guard
                         let temp = success?.hourly?.temperature2M?.first,
                         let hourly = success?.hourly?.temperature2M,
@@ -37,12 +52,12 @@ final class WeatherViewModel {
                         return
                     }
                     
-                    self.temperature = temp
+                    self.temperature = String(temp)
                     self.hourlyWeather = hourly
                     self.hours = time
                     
                 case .failure(let failure):
-                    print(failure.message)
+                    self.errorMessage = failure.message
                 }
             }
         }
