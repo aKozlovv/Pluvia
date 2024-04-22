@@ -80,10 +80,10 @@ enum Endpoint {
                 URLQueryItem(name: Query.format.rawValue, value: "json")
             ]
             
-        case .weather:
+        case .weather(let lat, let long):
             return [
-                URLQueryItem(name: Query.latitude.rawValue, value: "52.5"),
-                URLQueryItem(name: Query.longitude.rawValue, value: "13.4"),
+                URLQueryItem(name: Query.latitude.rawValue, value: String(lat)),
+                URLQueryItem(name: Query.longitude.rawValue, value: String(long)),
                 URLQueryItem(name: Query.hourly.rawValue, value: "temperature_2m"),
                 URLQueryItem(name: Query.daily.rawValue, value: "temperature_2m_max,temperature_2m_min,uv_index_max,wind_speed_10m_max"),
                 URLQueryItem(name: Query.current.rawValue, value: "relative_humidity_2m")
