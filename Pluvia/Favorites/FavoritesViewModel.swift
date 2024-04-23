@@ -21,28 +21,23 @@ final class FavoritesViewModel {
     // MARK: - Search binding
     func bind(field: AnyPublisher<String, Never>) {
         field
-            .map { text -> String in text.lowercased() }
+            .map { $0.lowercased() }
             .sink {[weak self] value in
-                guard let self = self else { return }
-                
-                self.filtredData = []
-                
-                if value == "" {
-                    self.filtredData = self.rawData
-                }
-                else {
-                    for city in rawData {
-                        if city.name
-                            .lowercased()
-                            .contains(value) {
-                            filtredData.append(city)
-                        }
-                    }
-                }
+                self?.filterCities(by: value)
             }
             .store(in: &subscriptions)
     }
     
+    private func filterCities(by query: String) {
+        self.filtredData = []
+        
+        if query == "" {
+            filtredData = rawData
+        } else {
+            rawData.forEach { if $0.name.lowercased().contains(query) { filtredData.append($0) } }
+        }
+    }
+        
     
     // MARK: - CRUD
     func create(city: City) -> Bool {
