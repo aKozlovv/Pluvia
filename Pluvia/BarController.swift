@@ -14,7 +14,8 @@ final class BarController: UITabBarController {
                 icon: UIImage(systemName: "rectangle.grid.1x2.fill")),
             
             generateVC(
-                vc: FavoritesView(viewModel: FavoritesViewModel()),
+                vc: FavoritesView(
+                    viewModel: FavoritesViewModel(dataManager: CititesRepository(dataManager: CoreDataManager.shared))),
                 title: "Favorites",
                 icon: UIImage(systemName: "rectangle.grid.1x2.fill"))
         ]

@@ -34,7 +34,16 @@ final class FavoritesView: UITableViewController {
         
         guard let textField = navigationItem.searchController?.searchBar.searchTextField.textPublisher()
         else { return }
-
+        
+        viewModel
+            .bind(field: textField)
+        
+        viewModel.$filtredData
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.tableView.reloadData()
+            }
+            .store(in: &subscriptions)
     }
     
     private func setupSearchBar() {
@@ -64,7 +73,7 @@ final class FavoritesView: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        5
+        return viewModel.filtredData.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
