@@ -34,8 +34,6 @@ final class FavoritesView: UITableViewController {
         
         guard let textField = navigationItem.searchController?.searchBar.searchTextField.textPublisher()
         else { return }
-        
-        
 
     }
     
@@ -66,7 +64,7 @@ final class FavoritesView: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-5
+        5
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

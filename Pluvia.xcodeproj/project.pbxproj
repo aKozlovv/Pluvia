@@ -36,8 +36,10 @@
 		FB96A5502BCF255600439CD4 /* Formatted.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB96A54F2BCF255600439CD4 /* Formatted.swift */; };
 		FBAFB9C92BD6559A00B49D02 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAFB9C82BD6559A00B49D02 /* Colors.swift */; };
 		FBAFB9CB2BD677EB00B49D02 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAFB9CA2BD677EB00B49D02 /* CoreDataManager.swift */; };
-		FBAFB9CE2BD6780500B49D02 /* CoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAFB9CD2BD6780500B49D02 /* CoreDataRepository.swift */; };
+		FBAFB9CE2BD6780500B49D02 /* CititesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAFB9CD2BD6780500B49D02 /* CititesRepository.swift */; };
 		FBAFB9D02BD67B8900B49D02 /* BarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAFB9CF2BD67B8900B49D02 /* BarController.swift */; };
+		FBAFB9D42BD68FF900B49D02 /* CDCity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAFB9D22BD68FF900B49D02 /* CDCity+CoreDataClass.swift */; };
+		FBAFB9D52BD68FF900B49D02 /* CDCity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBAFB9D32BD68FF900B49D02 /* CDCity+CoreDataProperties.swift */; };
 		FBC0932A2BD0319C00C8E4FA /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC093292BD0319C00C8E4FA /* FavoritesView.swift */; };
 		FBC0932C2BD031A600C8E4FA /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FBC0932B2BD031A600C8E4FA /* FavoritesViewModel.swift */; };
 /* End PBXBuildFile section */
@@ -74,8 +76,10 @@
 		FB96A54F2BCF255600439CD4 /* Formatted.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatted.swift; sourceTree = "<group>"; };
 		FBAFB9C82BD6559A00B49D02 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		FBAFB9CA2BD677EB00B49D02 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		FBAFB9CD2BD6780500B49D02 /* CoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataRepository.swift; sourceTree = "<group>"; };
+		FBAFB9CD2BD6780500B49D02 /* CititesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CititesRepository.swift; sourceTree = "<group>"; };
 		FBAFB9CF2BD67B8900B49D02 /* BarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarController.swift; sourceTree = "<group>"; };
+		FBAFB9D22BD68FF900B49D02 /* CDCity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCity+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		FBAFB9D32BD68FF900B49D02 /* CDCity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CDCity+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		FBC093292BD0319C00C8E4FA /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
 		FBC0932B2BD031A600C8E4FA /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -132,9 +136,9 @@
 				FB96A5412BCF23BD00439CD4 /* Models */,
 				FB96A54E2BCF254C00439CD4 /* Helpers */,
 				FB96A5352BCF233400439CD4 /* Network */,
-				FB96A5192BCF21EB00439CD4 /* Pluvia.xcdatamodeld */,
 				FBAFB9CC2BD677EF00B49D02 /* Persistence */,
 				FB96A5212BCF21EC00439CD4 /* Info.plist */,
+				FB96A5192BCF21EB00439CD4 /* Pluvia.xcdatamodeld */,
 				FBAFB9CF2BD67B8900B49D02 /* BarController.swift */,
 				FB96A5482BCF245000439CD4 /* Locations */,
 				FBC093282BD0318A00C8E4FA /* Favorites */,
@@ -245,10 +249,20 @@
 		FBAFB9CC2BD677EF00B49D02 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				FBAFB9D12BD68FC600B49D02 /* Entities */,
 				FBAFB9CA2BD677EB00B49D02 /* CoreDataManager.swift */,
-				FBAFB9CD2BD6780500B49D02 /* CoreDataRepository.swift */,
+				FBAFB9CD2BD6780500B49D02 /* CititesRepository.swift */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		FBAFB9D12BD68FC600B49D02 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FBAFB9D22BD68FF900B49D02 /* CDCity+CoreDataClass.swift */,
+				FBAFB9D32BD68FF900B49D02 /* CDCity+CoreDataProperties.swift */,
+			);
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		FBC093282BD0318A00C8E4FA /* Favorites */ = {
@@ -340,7 +354,7 @@
 				FB96A5382BCF235300439CD4 /* APIError.swift in Sources */,
 				FB96A52C2BCF22BB00439CD4 /* Constraints.swift in Sources */,
 				FB96A5472BCF242300439CD4 /* LocationsViewModel.swift in Sources */,
-				FBAFB9CE2BD6780500B49D02 /* CoreDataRepository.swift in Sources */,
+				FBAFB9CE2BD6780500B49D02 /* CititesRepository.swift in Sources */,
 				FB96A5452BCF23DD00439CD4 /* Coordinates.swift in Sources */,
 				FB29BC752BD534A300C391DB /* LocationsCell.swift in Sources */,
 				FB29BC782BD53B9700C391DB /* LocationCellViewModel.swift in Sources */,
@@ -348,6 +362,7 @@
 				FBC0932A2BD0319C00C8E4FA /* FavoritesView.swift in Sources */,
 				FBC0932C2BD031A600C8E4FA /* FavoritesViewModel.swift in Sources */,
 				FB96A5342BCF231200439CD4 /* Layout.swift in Sources */,
+				FBAFB9D52BD68FF900B49D02 /* CDCity+CoreDataProperties.swift in Sources */,
 				FBAFB9C92BD6559A00B49D02 /* Colors.swift in Sources */,
 				FB96A5112BCF21EB00439CD4 /* AppDelegate.swift in Sources */,
 				FB96A53C2BCF236400439CD4 /* HTTPMethod.swift in Sources */,
@@ -355,6 +370,7 @@
 				FBAFB9D02BD67B8900B49D02 /* BarController.swift in Sources */,
 				FB29BC7D2BD5694000C391DB /* WeatherCellViewModel.swift in Sources */,
 				FB96A5302BCF22C800439CD4 /* Collection.swift in Sources */,
+				FBAFB9D42BD68FF900B49D02 /* CDCity+CoreDataClass.swift in Sources */,
 				FB96A54C2BCF248600439CD4 /* WeatherViewModel.swift in Sources */,
 				FB96A54A2BCF247100439CD4 /* WeatherView.swift in Sources */,
 				FBAFB9CB2BD677EB00B49D02 /* CoreDataManager.swift in Sources */,

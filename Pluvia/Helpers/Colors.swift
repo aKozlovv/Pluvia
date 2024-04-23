@@ -32,13 +32,6 @@ enum WeatherState {
     }
     
     
-    // MARK: - Private methods
-    private func applyGradient(with colors: [CGColor]) {
-        self.gradient.colors = colors
-        self.gradient.locations = [0.1, 0.4, 1.0]
-    }
-    
-    
     // MARK: - Specific weather gradients
     private func getSunnyGradient() -> [CGColor] {
         let colorTop = UIColor(red: 253 / 255.0, green: 210 / 255.0, blue: 122 / 255.0, alpha: 1.0).cgColor

@@ -11,15 +11,7 @@ final class CoreDataManager {
     // MARK: - Properties
     private var viewContext: NSManagedObjectContext { return persistentContainer.viewContext }
     
-    
-    // MARK: - CRUD
-    
-    
-    
-    
-    
-    // MARK: - CoreData stack
-    lazy var persistentContainer: NSPersistentContainer = {
+    private lazy var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Pluvia")
         
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
@@ -27,19 +19,54 @@ final class CoreDataManager {
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
+        
         return container
     }()
     
-    func saveContext () {
-        let context = persistentContainer.viewContext
+    
+    // MARK: - Methods
+    func fetchSingleEntity<E: NSManagedObject>(with predicate: NSPredicate) -> E? {
+        let fetchRequest = NSFetchRequest<E>()
+        fetchRequest.predicate = predicate
+        fetchRequest.entity = E.entity()
         
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                let nserror = error as NSError
-                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
-            }
+        do {
+            let result = try CoreDataManager.shared.viewContext.fetch(fetchRequest).first
+            
+            guard result != nil else { return nil }
+            return result
+        }
+        catch let error {
+            print(error)
+            return nil
+        }
+    }
+    
+    func fetchAllManagedObjects<E: NSManagedObject>(managedObject: E.Type) -> [E]? {
+        do {
+            guard let result = try viewContext.fetch(managedObject.fetchRequest()) as? [E] else { return nil }
+            return result
+        }
+        catch let error {
+            print(error)
+        }
+        return nil
+    }
+    
+    
+    // MARK: - Context managment
+    func getContext() -> NSManagedObjectContext {
+        return viewContext
+    }
+    
+    func saveContext() -> Bool {
+        do {
+            try viewContext.save()
+            return true
+        }
+        catch {
+            print(error.localizedDescription)
+            return false
         }
     }
 }
