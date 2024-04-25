@@ -7,6 +7,7 @@ final class LocationsViewModel: ObservableObject {
     @Published var cities = [City]()
     @Published var errorMessage: String?
     
+    private var dataManager: CititesRepository = CititesRepository(dataManager: CoreDataManager.shared)
     private lazy var apiService = APIClient()
     private lazy var subscriptions = Set<AnyCancellable>()
     
@@ -18,6 +19,25 @@ final class LocationsViewModel: ObservableObject {
     // MARK: - Methods
     func city(at indexPath: IndexPath) -> City {
         return cities[indexPath.row]
+    }
+    
+    @discardableResult
+    func testCreate(city: City) -> Bool {
+        dataManager.testCreate(city)
+    }
+    
+    @discardableResult
+    func create(city: City) -> Bool {
+        dataManager.create(city: city)
+    }
+    
+    @discardableResult
+    func delete(city: City) -> Bool {
+        dataManager.delete(city: city)
+    }
+    
+    func checkCity(_ city: City) -> Bool {
+        dataManager.readSingleCity(by: city.name) != nil
     }
     
     

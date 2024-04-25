@@ -24,33 +24,56 @@ final class CoreDataManager {
     }()
     
     
-    // MARK: - Methods
-    func fetchSingleEntity<E: NSManagedObject>(with predicate: NSPredicate) -> E? {
-        let fetchRequest = NSFetchRequest<E>()
-        fetchRequest.predicate = predicate
-        fetchRequest.entity = E.entity()
+    // MARK: - CRUD
+    func create<E>(proccess: (_ object: E) -> Void) -> Bool {
+        proccess(NSEntityDescription.insertNewObject(forEntityName: "\(E.self)", into: viewContext) as! E)
+        return saveContext()
+    }
+    
+    func read<E>(proccess: ((_ fetchRequest: NSFetchRequest<NSFetchRequestResult>) -> Void)?) -> [E] {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "\(E.self)")
+        
+        proccess?(fetchRequest)
         
         do {
-            let result = try CoreDataManager.shared.viewContext.fetch(fetchRequest).first
-            
-            guard result != nil else { return nil }
-            return result
+            return try viewContext.fetch(fetchRequest) as! [E]
         }
         catch let error {
-            print(error)
-            return nil
+            fatalError(error.localizedDescription)
         }
     }
     
-    func fetchAllManagedObjects<E: NSManagedObject>(managedObject: E.Type) -> [E]? {
+    func update<E>(proccess: ((_ fetchRequest: NSFetchRequest<NSFetchRequestResult>) -> Void)?, update: (_ objects: [E]) -> Void) -> Bool {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "\(E.self)")
+        
+        proccess?(fetchRequest)
+        
         do {
-            guard let result = try viewContext.fetch(managedObject.fetchRequest()) as? [E] else { return nil }
-            return result
+            update(try viewContext.fetch(fetchRequest) as! [E])
+            return saveContext()
         }
         catch let error {
-            print(error)
+            fatalError(error.localizedDescription)
         }
-        return nil
+    }
+    
+    func delete<E>(proccess: ((_ fetchRequest: NSFetchRequest<NSFetchRequestResult>) -> Void)?, deletedObjects: ((_ objects: [E]) -> Void)?) -> Bool {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "\(E.self)")
+        
+        do {
+            let objects = try viewContext.fetch(fetchRequest) as! [E]
+            
+            deletedObjects?(objects)
+            
+            for object in objects {
+                viewContext.delete(object as! NSManagedObject)
+            }
+            
+            return saveContext()
+        }
+        catch let error {
+            fatalError(error.localizedDescription)
+        }
     }
     
     

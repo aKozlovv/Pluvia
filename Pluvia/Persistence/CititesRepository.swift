@@ -13,6 +13,53 @@ final class CititesRepository {
     
     
     // MARK: - CRUD
+    func testCreate(_ city: City) -> Bool {
+        return dataManager.create { (object: CDCity) in
+            object.name = city.name
+            object.country = city.country
+            object.lat = city.latitude
+            object.long = city.longitude
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     func create(city: City) -> Bool {
         let context = dataManager.getContext()
         let cdCity = CDCity(context: context)

@@ -68,8 +68,11 @@ final class FavoritesView: UITableViewController {
     
     // MARK: - Overrides
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let city = viewModel.filtredData[indexPath.row]
+        let vm = WeatherViewModel(city: city)
+        let vc = WeatherView(viewModel: vm)
         
-        
+        presentWeather(with: vc)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -79,6 +82,9 @@ final class FavoritesView: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: LocationsCell = tableView.dequeue(for: indexPath)
         
+        let city = viewModel.filtredData[indexPath.row]
+        let vm = LocationCellViewModel(city: city)
+        cell.bind(with: vm)
         
         return cell
     }
