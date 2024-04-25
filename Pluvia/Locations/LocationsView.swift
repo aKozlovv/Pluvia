@@ -94,7 +94,7 @@ final class LocationsView: UITableViewController {
         let city = viewModel.city(at: indexPath)
         
         let favItem = UIContextualAction(style: .normal, title: "Favorites") { [unowned self] action, view, handler in
-            handler(self.viewModel.testCreate(city: city))
+            handler(self.viewModel.create(city: city))
         }
         
         let swipeActions = UISwipeActionsConfiguration(actions: [favItem])

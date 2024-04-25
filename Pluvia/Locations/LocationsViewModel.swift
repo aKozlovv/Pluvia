@@ -22,22 +22,8 @@ final class LocationsViewModel: ObservableObject {
     }
     
     @discardableResult
-    func testCreate(city: City) -> Bool {
-        dataManager.testCreate(city)
-    }
-    
-    @discardableResult
     func create(city: City) -> Bool {
-        dataManager.create(city: city)
-    }
-    
-    @discardableResult
-    func delete(city: City) -> Bool {
-        dataManager.delete(city: city)
-    }
-    
-    func checkCity(_ city: City) -> Bool {
-        dataManager.readSingleCity(by: city.name) != nil
+        dataManager.create(city)
     }
     
     
