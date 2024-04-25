@@ -34,7 +34,8 @@ final class FavoritesViewModel {
         if query == "" {
             filtredData = rawData
         } else {
-            rawData.forEach { if $0.name.lowercased().contains(query) { filtredData.append($0) } }
+            rawData.forEach { 
+                if $0.name.lowercased().contains(query) { filtredData.append($0) } }
         }
     }
         

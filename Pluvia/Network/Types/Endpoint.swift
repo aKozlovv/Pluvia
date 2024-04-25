@@ -19,20 +19,10 @@ enum Endpoint {
         var components = URLComponents()
         components.scheme = "https"
         components.host = host
+        components.path = path
+        components.queryItems = items
         
-        switch self {
-        case .cities:
-            components.path = path
-            components.queryItems = items
-            
-            return components.url!
-            
-        case .weather:
-            components.path = path
-            components.queryItems = items
-            
-            return components.url!
-        }
+        return components.url!
     }
     
     
