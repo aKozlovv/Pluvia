@@ -43,14 +43,13 @@ final class CoreDataManager {
         }
     }
     
-    func update<E>(proccess: ((_ fetchRequest: NSFetchRequest<NSFetchRequestResult>) -> Void)?, update: (_ objects: [E]) -> Void) -> Bool {
+    func readSingle<E>(proccess: ((_ fetchRequest: NSFetchRequest<NSFetchRequestResult>) -> Void)?) -> E? {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "\(E.self)")
         
         proccess?(fetchRequest)
         
         do {
-            update(try viewContext.fetch(fetchRequest) as! [E])
-            return saveContext()
+            return try viewContext.fetch(fetchRequest) as? E
         }
         catch let error {
             fatalError(error.localizedDescription)
@@ -82,6 +81,7 @@ final class CoreDataManager {
         return viewContext
     }
     
+    @discardableResult
     func saveContext() -> Bool {
         do {
             try viewContext.save()
