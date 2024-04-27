@@ -7,6 +7,8 @@ final class LocationsCell: UITableViewCell {
     private var spacing: CGFloat = 20
     private var subscriptions = Set<AnyCancellable>()
 
+    private var viewModel: LocationCellViewModel!
+    
     
     // MARK: - UI Elements
     private lazy var countryTitle: UILabel = {
@@ -26,6 +28,14 @@ final class LocationsCell: UITableViewCell {
         return label
     }()
     
+    private lazy var favIcon: UIButton = {
+        let button = UIButton(type: .system)
+        button.tintColor = .label
+        button.setImage(UIImage(systemName: "heart"), for: .normal)
+        button.addTarget(self, action: #selector(favButtonTapped), for: .touchUpInside)
+        return button
+    }()
+    
     
     // MARK: - Init
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -41,6 +51,8 @@ final class LocationsCell: UITableViewCell {
     // MARK: - Methods
     func bind(with viewModel: LocationCellViewModel) {
         
+        self.viewModel = viewModel
+        
         viewModel.$cityName
             .receive(on: DispatchQueue.main)
             .assign(to: \.text, on: cityTitle)
@@ -50,10 +62,29 @@ final class LocationsCell: UITableViewCell {
             .receive(on: DispatchQueue.main)
             .assign(to: \.text, on: countryTitle)
             .store(in: &subscriptions)
+        
+        viewModel.$isFavorite
+            .receive(on: DispatchQueue.main)
+            .sink {[weak self] bool in
+                switch bool {
+                case true:
+                    self?.favIcon.setImage(UIImage(systemName: "heart.fill"), for: .normal)
+                    
+                case false:
+                    self?.favIcon.setImage(UIImage(systemName: "heart"), for: .normal)
+                }
+            }
+            .store(in: &subscriptions)
+        
+    }
+    
+    @objc
+    private func favButtonTapped() {
+        viewModel.tryAddToFavorites()
     }
     
     private func setupUI() {
-        contentView.addSubviewsUsingAutoLayout(countryTitle,cityTitle)
+        contentView.addSubviewsUsingAutoLayout(favIcon, countryTitle, cityTitle)
         
         countryTitle
             .topAnchor(equalTo: contentView.topAnchor, constant: spacing)
@@ -62,5 +93,11 @@ final class LocationsCell: UITableViewCell {
         cityTitle
             .topAnchor(equalTo: countryTitle.bottomAnchor, constant: spacing)
             .leadingAnchor(equalTo: contentView.leadingAnchor, constant: spacing)
+        
+        favIcon
+            .bottomAnchor(equalTo: contentView.bottomAnchor, constant: -spacing)
+            .trailingAnchor(equalTo: contentView.trailingAnchor, constant: -spacing)
+            .heightAnchor(equalTo: 32)
+            .widthAnchor(equalTo: 32)
     }
 }

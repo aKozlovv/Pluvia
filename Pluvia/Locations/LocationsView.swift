@@ -89,18 +89,6 @@ final class LocationsView: UITableViewController {
         
         return cell
     }
-    
-    override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let city = viewModel.city(at: indexPath)
-        
-        let favItem = UIContextualAction(style: .normal, title: "Favorites") { [unowned self] action, view, handler in
-            handler(self.viewModel.create(city: city))
-        }
-        
-        let swipeActions = UISwipeActionsConfiguration(actions: [favItem])
-        swipeActions.performsFirstActionWithFullSwipe = false
-        return swipeActions
-    }
 }
 
 

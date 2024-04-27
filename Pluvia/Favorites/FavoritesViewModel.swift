@@ -28,6 +28,11 @@ final class FavoritesViewModel {
             .store(in: &subscriptions)
     }
     
+    func updateData() {
+        self.rawData = fetchAll()
+        filtredData = rawData
+    }
+    
     private func filterCities(by query: String) {
         self.filtredData = []
         
@@ -36,29 +41,15 @@ final class FavoritesViewModel {
         } else {
             rawData.forEach {
                 $0.name.lowercased().contains(query) ? filtredData.append($0) : ()
-                //                if $0.name.lowercased().contains(query) { filtredData.append($0) } }
             }
         }
     }
-        
     
-    // MARK: - CRUD
-    func create(city: City) -> Bool {
-        dataManager.create(city: city)
-    }
-    
-    func fetchAll() -> [City] {
-        guard let result = dataManager.readAllCities() else {
+    private func fetchAll() -> [City] {
+        guard let result = dataManager.readAll() else {
             return []
         }
+        
         return result
-    }
-    
-    func fetchCity(_ city: City) -> City? {
-        dataManager.readSingleCity(by: city.name)
-    }
-    
-    func delete(city: City) -> Bool {
-        dataManager.delete(city: city)
     }
 }

@@ -43,19 +43,6 @@ final class CoreDataManager {
         }
     }
     
-    func readSingle<E>(proccess: ((_ fetchRequest: NSFetchRequest<NSFetchRequestResult>) -> Void)?) -> E? {
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "\(E.self)")
-        
-        proccess?(fetchRequest)
-        
-        do {
-            return try viewContext.fetch(fetchRequest) as? E
-        }
-        catch let error {
-            fatalError(error.localizedDescription)
-        }
-    }
-    
     func delete<E>(proccess: ((_ fetchRequest: NSFetchRequest<NSFetchRequestResult>) -> Void)?, deletedObjects: ((_ objects: [E]) -> Void)?) -> Bool {
         let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "\(E.self)")
         

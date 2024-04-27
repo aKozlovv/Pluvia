@@ -4,7 +4,7 @@ struct Coordinates: Codable {
 }
 
 // MARK: City
-struct City: Codable {
+struct City: Codable, Hashable {
     let name: String
     let country: String
     let latitude: Double

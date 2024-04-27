@@ -9,6 +9,12 @@ final class FavoritesView: UITableViewController {
     
     
     // MARK: - Lifecycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        tableView.reloadData()
+        viewModel.updateData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -81,7 +87,7 @@ final class FavoritesView: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: LocationsCell = tableView.dequeue(for: indexPath)
-        
+                
         let city = viewModel.filtredData[indexPath.row]
         let vm = LocationCellViewModel(city: city)
         cell.bind(with: vm)
