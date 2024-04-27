@@ -1,7 +1,7 @@
 import UIKit
 import Combine
 
-final class FavoritesView: UITableViewController {
+final class FavoritesView: BaseTableViewController<LocationsCell> {
     
     // MARK: - Private properties
     private var viewModel: FavoritesViewModel
@@ -18,8 +18,6 @@ final class FavoritesView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        setupTable()
-        setupSearchBar()
         setupBindings()
     }
     
@@ -50,25 +48,6 @@ final class FavoritesView: UITableViewController {
                 self?.tableView.reloadData()
             }
             .store(in: &subscriptions)
-    }
-    
-    private func setupSearchBar() {
-        let searchVC = UISearchController()
-        navigationItem.searchController = searchVC
-    }
-    
-    private func setupTable() {
-        tableView.rowHeight = 120
-        tableView.register(cell: LocationsCell.self)
-        tableView.dataSource = self
-        tableView.delegate = self
-    }
-    
-    
-    // MARK: - Navigation
-    private func presentWeather(with vc: UIViewController) {
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
     }
     
     

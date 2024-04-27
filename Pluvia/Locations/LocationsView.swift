@@ -1,7 +1,7 @@
 import UIKit
 import Combine
 
-final class LocationsView: UITableViewController {
+final class LocationsView: BaseTableViewController<LocationsCell> {
     
     // MARK: - Private properties
     private var viewModel: LocationsViewModel
@@ -12,8 +12,6 @@ final class LocationsView: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-        setupTable()
-        setupSearchBar()
         setupBindings()
     }
     
@@ -44,25 +42,6 @@ final class LocationsView: UITableViewController {
                 self?.tableView.reloadData()
             }
             .store(in: &subscriptions)
-    }
-    
-    private func setupSearchBar() {
-        let searchVC = UISearchController()
-        navigationItem.searchController = searchVC
-    }
-    
-    private func setupTable() {
-        tableView.rowHeight = 120
-        tableView.register(cell: LocationsCell.self)
-        tableView.dataSource = self
-        tableView.delegate = self
-    }
-    
-    
-    // MARK: - Navigation
-    private func presentWeather(with vc: UIViewController) {
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: true)
     }
     
     

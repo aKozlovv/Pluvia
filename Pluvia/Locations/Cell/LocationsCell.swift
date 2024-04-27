@@ -1,7 +1,7 @@
 import UIKit
 import Combine
 
-final class LocationsCell: UITableViewCell {
+final class LocationsCell: GenericCell<City> {
     
     // MARK: - Private properties
     private var spacing: CGFloat = 20
